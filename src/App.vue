@@ -1,14 +1,14 @@
 <script setup>
-
+import ManageLeaves from './components/hr/ManageLeaves.vue';
 </script>
 
 <template>
   <header>
 
-    Project HRM
+    <!-- Project HRM -->
 
   </header>
-
+  <ManageLeaves></ManageLeaves>
  
 </template>
 
