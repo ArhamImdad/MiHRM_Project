@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import logo from '@/assets/images.jpeg';
+import logo from '../../assets/images/login.jpeg';
 import { ref } from 'vue'; 
 
 export default {
