@@ -1,9 +1,11 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+//test commit 
+// import TheWelcome from '../components/TheWelcome.vue'
 </script>
 
 <template>
-  <main>
+  <!-- <main>
     <TheWelcome />
-  </main>
+  </main> -->
 </template>
+
