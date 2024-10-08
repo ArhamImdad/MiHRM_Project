@@ -1,4 +1,5 @@
 <script setup>
+//test commit 
 // import TheWelcome from '../components/TheWelcome.vue'
 </script>
 
@@ -7,3 +8,4 @@
     <TheWelcome />
   </main> -->
 </template>
+
