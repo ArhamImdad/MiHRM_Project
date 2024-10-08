@@ -9,10 +9,13 @@ const getters = {
 };
 
 const actions = {
-  fetchAdminData({ commit }) {
-    ApiServices.get("/admin-data").then((response) => {
+  async fetchAdminData({ commit }) {
+    try {
+      const response = await ApiServices.get("/admin-data");
       commit("setAdminData", response.data);
-    });
+    } catch (error) {
+      console.error("Error fetching admin data:", error);
+    }
   },
 };
 

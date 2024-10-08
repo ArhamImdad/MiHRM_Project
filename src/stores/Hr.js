@@ -9,21 +9,22 @@ const getters = {
 };
 
 const actions = {
-  fetchHRData({ commit }) {
-    ApiServices.get("/hr-data").then((response) => {
+  async fetchHRData({ commit }) {
+    try {
+      const response = await ApiServices.get("/hr-data");
       commit("setHRData", response.data);
-    });
+    } catch (error) {
+      console.error("Error fetching HR data:", error); // Error handling
+    }
   },
-  approveLeave({ commit }, leaveId) {
-    return new Promise((resolve, reject) => {
-      ApiServices.post(`/leave/${leaveId}/approve`)
-        .then((response) => {
-          resolve(response);
-        })
-        .catch((error) => {
-          reject(error);
-        });
-    });
+
+  async approveLeave({ commit }, leaveId) {
+    try {
+      const response = await ApiServices.post(`/leave/${leaveId}/approve`);
+      return response; // Returning the response after success
+    } catch (error) {
+      throw error; // Rethrow the error so it can be handled by the caller
+    }
   },
 };
 

@@ -10,23 +10,20 @@ const getters = {
 };
 
 const actions = {
-  login({ commit }, credentials) {
-    return new Promise((resolve, reject) => {
-      ApiServices.post("/login", credentials)
-        .then((response) => {
-          commit("setUser", response.data.user);
-          resolve(response);
-        })
-        .catch((error) => {
-          reject(error);
-        });
-    });
+  async login({ commit }, credentials) {
+    try {
+      const response = await ApiServices.post("/login", credentials);
+      commit("setUser", response.data.user);
+      return response;
+    } catch (error) {
+      throw error; // Re-throw the error so the caller can handle it
+    }
   },
-  logout({ commit }) {
-    return new Promise((resolve) => {
-      commit("clearUser");
-      resolve();
-    });
+  
+  async logout({ commit }) {
+    commit("clearUser");
+    // Simulating an async operation with resolve()
+    return Promise.resolve();
   },
 };
 

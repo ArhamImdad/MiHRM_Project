@@ -9,10 +9,13 @@ const getters = {
 };
 
 const actions = {
-  fetchEmployees({ commit }) {
-    ApiServices.get("/employees").then((response) => {
+  async fetchEmployees({ commit }) {
+    try {
+      const response = await ApiServices.get("/employees");
       commit("setEmployees", response.data);
-    });
+    } catch (error) {
+      console.error("Error fetching employees:", error); // Handle the error properly
+    }
   },
 };
 

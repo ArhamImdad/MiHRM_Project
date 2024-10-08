@@ -5,7 +5,7 @@ import Vuex from 'vuex';
 import auth from './AuthModule';
 import role from './RoleModule';
 import employee from './Employee';
-import admin from './admin';
+import admin from './Admin';
 import hr from './modules/hr';
 
 Vue.use(Vuex);
