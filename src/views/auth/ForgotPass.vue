@@ -7,7 +7,7 @@
                     <img :src="logo" alt="Logo" class="logo" />
                  
                     <p>Enter the email address associated with your account and we'll
-                        send you a link to reset your password
+                        send you a link to reset your password..
                     </p>
                     <form @submit.prevent="handleLogin">
                         <div class="input-group">
